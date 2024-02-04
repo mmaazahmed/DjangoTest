@@ -109,3 +109,36 @@ This Django-based API manages appointments for patients and counsellors. It prov
 - **Method:** `GET`
 - **Description:** Fetch a specific patient by email.
 
+
+
+### Counsellors
+
+#### List Counsellors
+
+- **URL:** `/counsellors/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all counsellors.
+
+#### Delete Counsellor
+
+- **URL:** `/counsellors/delete/<int:counsellor_id>`
+- **Method:** `DELETE`
+- **Description:** Soft-delete a counsellor by marking it as inactive.
+
+#### Create Counsellor
+
+- **URL:** `/counsellors/create/`
+- **Method:** `POST`
+- **Description:** Create a new counsellor.
+
+#### Update Counsellor
+
+- **URL:** `/counsellors/update/<int:counsellor_id>/`
+- **Method:** `PUT`
+- **Description:** Update an existing counsellor.
+
+#### Fetch Counsellor by Email
+
+- **URL:** `/counsellors/fetch-email/<str:counsellor_email>/`
+- **Method:** `GET`
+- **Description:** Fetch a specific counsellor by email.
