@@ -8,7 +8,7 @@ from ..serializers import PatientSerializer
 @api_view(['GET'])
 def api_overview(request):
     api_urls={
-        'pokemon',
+        '//todo',
     }
     return Response(api_urls)
 
