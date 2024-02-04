@@ -17,12 +17,6 @@ Run the following command to install the required dependencies:
 pip install -r requirements.txt
 
 ## API Endpoints
-###Create a Patient (POST)
-
-    POST /api/patients/
-
-
-## API Endpoints
 
 ### List Appointments
 
