@@ -5,6 +5,6 @@ urlpatterns = [
     path('create/', create_patient, name='create_patient'),
     path('update/<int:patient_id>/', update_patient, name='update_patient'),
     path('delete/<int:patient_id>', delete_patient, name='delete_patient'),
-    path('fetch/<int:patient_id>/', fetch_patient, name='FetchPatientById'),
-    path('email/<str:patient_email>/', fetch_patient_by_email, name='FetchPatientByEmail'),
+    path('fetch-id/<int:patient_id>/', fetch_patient, name='FetchPatientById'),
+    path('fetch-email/<str:patient_email>/', fetch_patient_by_email, name='FetchPatientByEmail'),
 ]   

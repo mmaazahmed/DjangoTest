@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "6e8e333b-1789-4041-a48a-4ed90c5597a1",
+		"name": "Api",
+		"description": "Api to create,delete,update,read data in the CRUD app.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32754210"
+	},
+	"item": [
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "listActivePatients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/patients/"
+					},
+					"response": []
+				},
+				{
+					"name": "createPatient",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"example_user\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\" : \"example_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/patients/create/"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"newName\",\r\n    \"email\": \"newEmail@example.com\",\r\n    \"password\" : \"new_password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/patients/update/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"patients",
+								"update",
+								"8"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/patients/fetch-id/8"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchByEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/patients/fetch-email/a@gmail.com"
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePatient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/patients/delete/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Counsellors",
+			"item": [
+				{
+					"name": "listActiveCounsellors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/counsellors/"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCounsellor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/counsellors/delete/2"
+					},
+					"response": []
+				},
+				{
+					"name": "createCounsellor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"counsellorName\",\r\n    \"email\": \"counsellorEmail@example.com\",\r\n    \"password\" : \"passwordGreaterThan8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/counsellors/create/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateCounselor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updatdNme\",\r\n    \"email\": \"updatml@example.com\",\r\n    \"password\": \"updadPasdsfsf2sword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/counsellors/update/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/counsellors/fetch-email/updateEmail@example.com"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "ListActiveAppointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/appointments/"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAppointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/appointments/delete/5/"
+					},
+					"response": []
+				},
+				{
+					"name": "createAppointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient\": 9,\r\n    \"counsellor\":2,\r\n    \"appointment_date\": \"2024-06-18\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/appointments/create/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateAppointment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient\":10,\r\n    \"counsellor\":2,\r\n    \"appointment_date\": \"2025-06-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/appointments/update/5"
+					},
+					"response": []
+				},
+				{
+					"name": "updateAppointment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"appointment_date\": \"2025-08-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/api/appointments/update/5/"
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/appointments/fetch/?patient_id=12&counsellor_id=2&appointment_date=2025-08-12",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointments",
+								"fetch",
+								""
+							],
+							"query": [
+								{
+									"key": "patient_id",
+									"value": "12"
+								},
+								{
+									"key": "counsellor_id",
+									"value": "2"
+								},
+								{
+									"key": "appointment_date",
+									"value": "2025-08-12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchActiveAppointmentsForPatient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/appointments/for-patient/9/"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchActiveAppointmentsForCounsellor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/appointments/for-counsellor/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchActiveAppointmentsBetweenRange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/appointments/active/?start_date=2025-06-11&end_date=2025-06-14",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointments",
+								"active",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2025-06-11"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-06-14"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAppointmentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/appointments/fetch-id/5"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

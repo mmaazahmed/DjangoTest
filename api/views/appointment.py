@@ -70,11 +70,17 @@ def update_appointment(request, appointment_id):
     return Response(serializer.errors, status=400)
 
 @api_view(['GET'])
+def fetch_appointment_by_id(request,appointment_id):
+    appointment = get_object_or_404(Appointment, id=appointment_id)
+    serializer = AppointmentSerializer(appointment)
+    return Response(serializer.data)
+
+@api_view(['GET'])
 def fetch_appointment(request):
     try:
-        patient_id = int(patient_id)
-        counsellor_id = int(counsellor_id)
-        appointment_date = datetime.strptime(appointment_date, "%Y-%m-%d")
+        patient_id = int(request.GET.get('patient_id'))
+        counsellor_id = int(request.GET.get('counsellor_id'))
+        appointment_date = timezone.datetime.strptime(request.GET.get('appointment_date'), "%Y-%m-%d")
     except (ValueError, TypeError) as e:
         return Response({"error": f"Invalid parameter values: {e}"}, status=400)
 
@@ -88,6 +94,5 @@ def fetch_appointment(request):
         appointment_date=appointment_date,
         is_active=True
     )
-
     serializer = AppointmentSerializer(appointment)
     return Response(serializer.data)

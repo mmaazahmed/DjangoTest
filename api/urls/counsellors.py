@@ -5,5 +5,5 @@ urlpatterns = [
     path('delete/<int:counsellor_id>', delete_counsellor, name='delete_counsellor'),
     path('create/', create_counsellor, name='create_counsellor'),
     path('update/<int:counsellor_id>/', update_counsellor, name='update_counsellor'),
-    path('email/<str:counsellor_email>/', fetch_counsellor_by_email, name='FetchCounsellorByEmail'),
+    path('fetch-email/<str:counsellor_email>/', fetch_counsellor_by_email, name='FetchCounsellorByEmail'),
 ]   

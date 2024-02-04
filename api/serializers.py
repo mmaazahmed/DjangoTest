@@ -26,9 +26,11 @@ class PatientSerializer(serializers.ModelSerializer):
         instance.email=validated_data.get('email',instance.email)
         instance.is_active = validated_data.get('is_active', instance.is_active)
 
-        password = validated_data.get('password')
+        password = validated_data.get('password',instance.password)
         if password:
             validate_password(password)
+            instance.password=password
+
 
         instance.save()
 
@@ -41,7 +43,6 @@ class CounsellorSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         email = validated_data.get('email')
         existing_counsellor = Counsellor.objects.filter(email=email)
-        # if Counsellor.objects.filter(email=email).exists():
         if existing_counsellor:
             return self.update(existing_counsellor , validated_data)
         password = validated_data.get('password')
@@ -54,9 +55,10 @@ class CounsellorSerializer(serializers.ModelSerializer):
         instance.email=validated_data.get('email',instance.email)
         instance.is_active = validated_data.get('is_active', instance.is_active)
 
-        password = validated_data.get('password')
+        password = validated_data.get('password',instance.password)
         if password:
             validate_password(password)
+            instance.password=password
 
         instance.save()
         return instance
