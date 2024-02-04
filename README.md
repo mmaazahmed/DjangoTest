@@ -72,6 +72,45 @@ pip install -r requirements.txt
 - **Method:** `GET`
 - **Description:** Fetch a specific appointment by its ID.
 
+## API Endpoints Patients
+
+### List Patients
+
+- **URL:** `/patients/`
+- **Method:** `GET`
+- **Description:** Retrieve a list of all patients.
+
+### Create Patient
+
+- **URL:** `/patients/create/`
+- **Method:** `POST`
+- **Description:** Create a new patient.
+
+### Update Patient
+
+- **URL:** `/patients/update/<int:patient_id>/`
+- **Method:** `PUT`
+- **Description:** Update an existing patient.
+
+### Delete Patient
+
+- **URL:** `/patients/delete/<int:patient_id>/`
+- **Method:** `DELETE`
+- **Description:** Soft-delete a patient by marking it as inactive.
+
+### Fetch Patient by ID
+
+- **URL:** `/patients/fetch-id/<int:patient_id>/`
+- **Method:** `GET`
+- **Description:** Fetch a specific patient by its ID.
+
+### Fetch Patient by Email
+
+- **URL:** `/patients/fetch-email/<str:patient_email>/`
+- **Method:** `GET`
+- **Description:** Fetch a specific patient by email.
+
+
 ## Usage
 
 1. Clone the repository.
