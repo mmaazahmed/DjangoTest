@@ -1,3 +1,5 @@
+
+# CRUD, apointment,patient,counsellor API
 ## Overview
 
 This Django-based API manages appointments for patients and counsellors. It provides functionality for creating, updating, fetching, and deleting appointments.
@@ -18,7 +20,6 @@ pip install -r requirements.txt
 ###Create a Patient (POST)
 
     POST /api/patients/
-# Your Project Name - Appointments API
 
 
 ## API Endpoints
