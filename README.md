@@ -21,7 +21,7 @@ This Django-based API manages appointments for patients and counsellors. It prov
 
 - **URL:** `/appointments/`
 - **Method:** `GET`
-- **Description:** Retrieve a list of all appointments.
+- **Description:** Retrieve a list of all active appointments.
 
 #### Delete Appointment
 
@@ -77,7 +77,7 @@ This Django-based API manages appointments for patients and counsellors. It prov
 
 - **URL:** `/patients/`
 - **Method:** `GET`
-- **Description:** Retrieve a list of all patients.
+- **Description:** Retrieve a list of all active patients.
 
 #### Create Patient
 
@@ -117,7 +117,7 @@ This Django-based API manages appointments for patients and counsellors. It prov
 
 - **URL:** `/counsellors/`
 - **Method:** `GET`
-- **Description:** Retrieve a list of all counsellors.
+- **Description:** Retrieve a list of all active counsellors.
 
 #### Delete Counsellor
 
